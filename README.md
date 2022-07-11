@@ -12,12 +12,20 @@ cgroup: Tambem serve para isolamento porem mais especifico para cpu e memoria
 
 ## Principais comandos
 
-Executar imagem de um container
+- Executar imagem de um container
 
 ```
-docker run
+docker run <flags> <imagem>
+```
+
+- Listar containers
+
+```
+docker container ls
+docker ps
 ```
 
 ## Flags:
 
 - -d: Nao segura o terminal (container em "background")
+- -p: Associa uma porta do container a uma porta do host
