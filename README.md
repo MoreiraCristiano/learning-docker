@@ -18,11 +18,32 @@ cgroup: Tambem serve para isolamento porem mais especifico para cpu e memoria
 docker run <flags> <imagem>
 ```
 
+- Parar container
+
+```
+docker stop <container id>
+```
+
+- Remover container
+
+```
+docker rm <container id>        // Remove o container
+docker rmi
+```
+
 - Listar containers
 
 ```
 docker container ls
 docker ps
+
+docker ps -a            // historico de containers
+```
+
+- Logs
+
+```
+docker logs -f <container id>    // live log
 ```
 
 ## Flags:
