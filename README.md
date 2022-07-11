@@ -14,10 +14,10 @@ cgroup: Tambem serve para isolamento porem mais especifico para cpu e memoria
 
 Executar imagem de um container
 
-Flags:
-
-- -d: Nao segura o terminal (container em "background")
-
 ```
 docker run
 ```
+
+## Flags:
+
+- -d: Nao segura o terminal (container em "background")
