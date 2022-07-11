@@ -12,10 +12,18 @@ cgroup: Also used to isolate resources but most specific to CPU and RAM
 
 ## Commands
 
-- Exec a img of a container
+- Run a container img
 
 ```
 docker run <flags> <imagem>
+
+Real uses of a command to run a container:
+
+sudo docker run -d -p 3000:3000 -v todo-db:/etc/todos/ getting-started:2.0
+
+More complex command:
+
+sudo docker network create mysql-todo-db && sudo docker run -d -v mysql-todo-db:/var/lib/mysql --network todo-app -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=todos mysql:5.7
 ```
 
 - Stop a container
@@ -103,5 +111,41 @@ EXPOSE 3000
 ### Build a Dockerfile
 
 ```
-docker build -t <tag name> <dockerfile dir>
+docker build -t <tagname:version> <dockerfile dir>
+```
+
+## Volumes
+
+Used to do data persistence
+
+Create a volume
+
+```
+docker volume create <volume name>
+docker volume ls
+```
+
+Del a volume
+
+```
+docker volume rm
+```
+
+## Network
+
+By default all containers are in the same network
+
+Create network
+
+```
+docker network create
+
+--network todo-app --network-alias mysql        // provide an alias to your network
+```
+
+Network troubleshooting
+
+```
+sudo docker run -it --network <networkname> nicolaka/netshoot
+
 ```
