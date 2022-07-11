@@ -1,43 +1,49 @@
 # Docker
 
-## Container
+## Containers
 
-Isolamento de recursos dentro de um S.O sem uma camada de hypervisor
+Isolated resources of machine without a hypervisor
 
-### Namespace e cgroup
+### Namespaces e cgroups
 
-Namespace: Serve para isolar alguns recursos especificos, como: usuarios, pid, rede, pontos de montagem e etc.
+Namespace: Isolate several resources like: network, users, pid, mount, etc.
 
-cgroup: Tambem serve para isolamento porem mais especifico para cpu e memoria
+cgroup: Also used to isolate resources but most specific to CPU and RAM
 
-## Principais comandos
+## Commands
 
-- Executar imagem de um container
+- Exec a img of a container
 
 ```
 docker run <flags> <imagem>
 ```
 
-- Parar container
+- Stop a container
 
 ```
 docker stop <container id>
 ```
 
-- Remover container
+- Start a container
 
 ```
-docker rm <container id>        // Remove o container
+docker start <container id>
+```
+
+- Remove a container
+
+```
+docker rm <container id>        // Remove the container
 docker rmi
 ```
 
-- Listar containers
+- List containers
 
 ```
 docker container ls
 docker ps
 
-docker ps -a            // historico de containers
+docker ps -a            // containers historic
 ```
 
 - Logs
@@ -48,5 +54,5 @@ docker logs -f <container id>    // live log
 
 ## Flags:
 
-- -d: Nao segura o terminal (container em "background")
-- -p: Associa uma porta do container a uma porta do host
+- -d: Background container (do not lock my terminal)
+- -p: Bind a port of a container to a port of host
