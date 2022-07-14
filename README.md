@@ -143,6 +143,18 @@ docker network create
 --network todo-app --network-alias mysql        // provide an alias to your network
 ```
 
+Network options
+
+```
+--dns 8.8.8.8
+--hostname catota123        // name to container
+--link containertolink      // link containers; deprecated
+--expose 80                 // expose container port to HOST
+--publish                   // bind port from container to host
+--mac-address               // custom mac
+--net=<host|bridge|none>    // change net
+```
+
 Network troubleshooting
 
 ```
